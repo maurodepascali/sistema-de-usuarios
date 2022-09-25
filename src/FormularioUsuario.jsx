@@ -18,9 +18,10 @@ const FormularioUsuario = (props) => {
                 type="text" 
                 name="nombre"
                 {...register("nombre", { required: true })}
+                
             />
             <div>
-                {errors.nombre && <span>Campo obligatorio</span>}
+                {errors.nombre && <span style={{color: 'red'}}>*Campo obligatorio</span>}
             </div>
             <label>Correo eléctronico</label>
             <input 
@@ -29,7 +30,7 @@ const FormularioUsuario = (props) => {
                 {...register("email", { required: true })}
                 />
             <div>
-                {errors.email && <span>Campo obligatorio</span>}
+                {errors.email && <span style={{color: 'red'}}>*Campo obligatorio</span>}
             </div>
             <label>Teléfono</label>
             <input 
@@ -38,21 +39,22 @@ const FormularioUsuario = (props) => {
                 {...register("telefono", { required: true })}
             />
             <div>
-                {errors.telefono && <span>Campo obligatorio</span>}
+                {errors.telefono && <span style={{color: 'red'}}>*Campo obligatorio</span>}
             </div>
-            <label>Notas:</label>
+            <label>Notas</label>
             <textarea
+            rows="5"
             type="text" 
             name="notas"
             {...register("notas", { required: true })}
             />
             
             <div>
-                {errors.notas && <span>Campo obligatorio</span>}
+                {errors.notas && <span style={{color: 'red'}}>*Campo obligatorio</span>}
             </div>
             
 
-            <button type="submit">Agregar</button>
+            <button type="submit" className='btn btn-primary add'>Agregar</button>
         </form>
   )
 }

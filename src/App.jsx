@@ -55,15 +55,14 @@ const App = () => {
 
   return (
     <Fragment>
-      <div className='container'>
-        <h1 className='text-center'>Sistema de usuarios</h1><br />
-        <div className='flex-row'>
-          <div className='flex-large'>
+      <h1 className='text-center titulo'>Sistema de usuarios</h1><br />
+      <div className='contenedor'> 
+          <div className='formAddOrEdit'>
             {
               editar ? 
               (
                 <div>
-                  <h2>Editar usuario</h2>
+                  <h2 className='text-center subtitulo'>Editar usuario</h2>
                   <EditarUsuario
                     currentUsuario={currentUsuario}
                     actualizarUsuario={actualizarUsuario}
@@ -71,23 +70,20 @@ const App = () => {
                 </div>
               ) : (
                 <div>
-                  <h2>Agregar usuario</h2>
+                  <h2 className='text-center subtitulo'>Agregar usuario</h2>
                   <FormularioUsuario agregarUsuario={agregarUsuario}/>
                 </div>
               )
             }
           </div>
-          <div className='flex-large'>
-            <h2>Usuarios</h2>
+          <div className='UserList'>
+            <h2 className='text-center subtitulo'>Listado de usuarios</h2>
               <ListaUsuarios 
                 usuarios={usuarios} 
                 eliminarUsuario={eliminarUsuario}  
                 editarUsuario={editarUsuario}
               />
           </div>
-
-        </div>
-
       </div>
     </Fragment>
   )
